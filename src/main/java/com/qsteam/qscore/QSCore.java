@@ -1,6 +1,6 @@
-package com.example.modid;
+package com.qsteam.qscore;
 
-import com.example.modid.proxy.CommonProxy;
+import com.qsteam.qscore.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, dependencies = Tags.DEPENDENCIES)
-public class ExampleMod {
+public class QSCore {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
 
@@ -24,7 +24,7 @@ public class ExampleMod {
     public static CommonProxy proxy;
 
     @Instance
-    public static ExampleMod instance;
+    public static QSCore instance;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
