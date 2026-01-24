@@ -27,5 +27,5 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Mod-Jar
+          name: QSCore
           path: build/libs/*.jar
