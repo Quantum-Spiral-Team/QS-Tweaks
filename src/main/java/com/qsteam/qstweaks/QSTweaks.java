@@ -1,6 +1,6 @@
-package com.qsteam.qscore;
+package com.qsteam.qstweaks;
 
-import com.qsteam.qscore.proxy.CommonProxy;
+import com.qsteam.qstweaks.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, dependencies = Tags.DEPENDENCIES)
-public class QSCore {
+public class QSTweaks {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
 
@@ -24,7 +24,7 @@ public class QSCore {
     public static CommonProxy proxy;
 
     @Instance
-    public static QSCore instance;
+    public static QSTweaks instance;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {

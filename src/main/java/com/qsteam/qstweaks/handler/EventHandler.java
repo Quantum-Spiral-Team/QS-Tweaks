@@ -1,6 +1,6 @@
-package com.qsteam.qscore.handler;
+package com.qsteam.qstweaks.handler;
 
-import com.qsteam.qscore.Tags;
+import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;

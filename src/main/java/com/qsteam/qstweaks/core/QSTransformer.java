@@ -1,4 +1,4 @@
-package com.qsteam.qscore.core;
+package com.qsteam.qstweaks.core;
 
 import net.minecraft.launchwrapper.IClassTransformer;
 import org.objectweb.asm.Opcodes;

@@ -1,7 +1,7 @@
-package com.qsteam.qscore.core;
+package com.qsteam.qstweaks.core;
 
 import com.google.common.collect.ImmutableMap;
-import com.qsteam.qscore.QSConfig;
+import com.qsteam.qstweaks.QSConfig;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -17,7 +17,8 @@ public class QSLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
     private static final Map<String, BooleanSupplier> CLIENT_MIXIN_CONFIGS = Collections.emptyMap();
 
     private static final Map<String, BooleanSupplier> COMMON_MIXIN_CONFIGS = ImmutableMap.of(
-            "mixins/debug/mixins.qscore.dimensions.json", () -> QSConfig.general.dimConflictDetector
+            "mixins/debug/mixins.qstweaks.dimensions.json", () -> QSConfig.general.dimConflictDetector,
+            "mixins/debug/mixins.qstweaks.langs.json", () -> QSConfig.general.missingLangsLogger
     );
 
     @Override

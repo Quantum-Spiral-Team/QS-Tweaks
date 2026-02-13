@@ -1,4 +1,4 @@
-package com.qsteam.qscore.mixin.debug.dimensoins;
+package com.qsteam.qstweaks.mixin.debug.dimensoins;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.DimensionType;

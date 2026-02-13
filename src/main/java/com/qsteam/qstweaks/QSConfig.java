@@ -1,4 +1,4 @@
-package com.qsteam.qscore;
+package com.qsteam.qstweaks;
 
 import net.minecraftforge.common.config.Config;
 
@@ -13,6 +13,10 @@ public class QSConfig {
     public static class DebugCategory {
         @Config.Comment("Logging dimension IDs conflicts")
         public boolean dimConflictDetector = true;
+
+        @Config.Comment("Logging missing languages")
+        public boolean missingLangsLogger = true;
+        public String language = "en_us";
     }
 
 }
