@@ -1,11 +1,11 @@
 package com.qsteam.qstweaks.util;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import com.qsteam.qstweaks.QSConfig;
 import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
-import org.apache.commons.collections4.MultiValuedMap;
-import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public class LangsLogger {
     private static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME + "/LangsLogger");
 
     private static final String TARGET_LANG = QSConfig.general.language;
-    private static final MultiValuedMap<String, String> missingKeys = new ArrayListValuedHashMap<>();
+    private static final Multimap<String, String> missingKeys = ArrayListMultimap.create();
 
     public static void markMissing(String key) {
         if (key == null || key.isEmpty()) return;
