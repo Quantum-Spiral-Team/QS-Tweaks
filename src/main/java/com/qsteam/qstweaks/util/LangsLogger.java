@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.qsteam.qstweaks.QSConfig;
 import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.LoaderState;
 import net.minecraftforge.fml.common.ModContainer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,10 +25,18 @@ public class LangsLogger {
     }
 
     private static String detectModId(String key) {
+        if (Loader.instance() == null || !Loader.instance().hasReachedState(LoaderState.CONSTRUCTING)) {
+            return "minecraft";
+        }
+
         String[] parts = key.split("\\.");
         for (String part : parts) {
-            if (Loader.isModLoaded(part)) return part;
-            else if (part.equals("minecraft")) return "minecraft";
+            try {
+                if (Loader.isModLoaded(part)) return part;
+                else if (part.equals("minecraft")) return "minecraft";
+            } catch (Exception e) {
+                return "unknown";
+            }
         }
         return "unknown";
     }
