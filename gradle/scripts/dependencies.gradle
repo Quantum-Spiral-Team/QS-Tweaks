@@ -25,6 +25,9 @@ repositories {
             includeGroup 'maven.modrinth'
         }
     }
+    maven {
+        url "https://repo.cleanroommc.com/releases"
+    }
     mavenLocal() // Must be last for caching to work
 }
 
@@ -68,5 +71,14 @@ dependencies {
 
     compileOnlyApi "org.jetbrains:annotations:26.0.2"
     annotationProcessor "org.jetbrains:annotations:26.0.2"
+
+    compileOnly rfg.deobf("curse.maven:jei-238222:5846804")
+    runtimeOnly "mezz:jei:4.30.2"
+    
+    // Pyrotech
+    implementation rfg.deobf("curse.maven:pyrotech-306676:6253355")
+    implementation rfg.deobf("curse.maven:athenaeum-284350:4633750")
+    implementation rfg.deobf("curse.maven:dropt-284973:5405050")
+
 
 }

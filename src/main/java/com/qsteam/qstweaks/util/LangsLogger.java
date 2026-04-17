@@ -2,7 +2,7 @@ package com.qsteam.qstweaks.util;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-import com.qsteam.qstweaks.QSConfig;
+import com.qsteam.qstweaks.config.QSDebugConfig;
 import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.LoaderState;
@@ -16,7 +16,7 @@ public class LangsLogger {
 
     private static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME + "/LangsLogger");
 
-    private static final String TARGET_LANG = QSConfig.general.language;
+    private static final String[] TARGET_LANGS = QSDebugConfig.GENERAL.languages;
     private static final Multimap<String, String> missingKeys = ArrayListMultimap.create();
 
     public static void markMissing(String key) {
@@ -45,9 +45,9 @@ public class LangsLogger {
         Map<String, ModContainer> modMap = Loader.instance().getIndexedModList();
 
         if (missingKeys.isEmpty()) {
-            LOGGER.info("Missing keys for {} lang not found.", TARGET_LANG);
+            LOGGER.info("Missing keys for {} lang not found.", TARGET_LANGS);
         } else {
-            LOGGER.debug("Starting search for missing keys for {}", TARGET_LANG);
+            LOGGER.debug("Starting search for missing keys for {}", TARGET_LANGS);
 
             List<String> sortedModIds = new ArrayList<>(missingKeys.keySet());
             Collections.sort(sortedModIds);
@@ -75,7 +75,7 @@ public class LangsLogger {
                 LOGGER.info("{} {}: {}", modName, modId, sortedKeys);
             }
 
-            LOGGER.debug("Finish search for missing keys for {}", TARGET_LANG);
+            LOGGER.debug("Finish search for missing keys for {}", TARGET_LANGS);
         }
     }
 

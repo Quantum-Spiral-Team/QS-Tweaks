@@ -40,4 +40,5 @@ public class QSTweaks {
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
     }
+
 }
