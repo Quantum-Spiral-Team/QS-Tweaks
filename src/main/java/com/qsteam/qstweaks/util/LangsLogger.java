@@ -45,9 +45,9 @@ public class LangsLogger {
         Map<String, ModContainer> modMap = Loader.instance().getIndexedModList();
 
         if (missingKeys.isEmpty()) {
-            LOGGER.info("Missing keys for {} lang not found.", TARGET_LANGS);
+            LOGGER.info("Missing keys for {} lang not found.", (Object) TARGET_LANGS);
         } else {
-            LOGGER.debug("Starting search for missing keys for {}", TARGET_LANGS);
+            LOGGER.debug("Starting search for missing keys for {}", (Object) TARGET_LANGS);
 
             List<String> sortedModIds = new ArrayList<>(missingKeys.keySet());
             Collections.sort(sortedModIds);
@@ -75,7 +75,7 @@ public class LangsLogger {
                 LOGGER.info("{} {}: {}", modName, modId, sortedKeys);
             }
 
-            LOGGER.debug("Finish search for missing keys for {}", TARGET_LANGS);
+            LOGGER.debug("Finish search for missing keys for {}", (Object) TARGET_LANGS);
         }
     }
 

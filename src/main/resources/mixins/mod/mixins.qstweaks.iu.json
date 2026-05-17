@@ -1,0 +1,14 @@
+{
+  "package": "com.qsteam.qstweaks.mixin.mods.iu",
+  "required": true,
+  "refmap": "mixins.qscore.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinJEICompat"
+  ],
+  "server": [],
+  "client": [
+  ]
+}

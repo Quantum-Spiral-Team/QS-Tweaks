@@ -1,13 +1,13 @@
 package com.qsteam.qstweaks.config;
 
-import com.codetaylor.mc.pyrotech.Reference;
+import com.cleanroommc.configanytime.ConfigAnytime;
 import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.common.config.Config;
 
 @Config(modid = Tags.MOD_ID, name = Tags.CFG_FOLDER + Tags.CFG_MOD_INTEGRATION)
 public class QSModIntegrationConfig {
 
-    @Config.Name(Reference.MOD_ID)
+    @Config.Name("pyrotech")
 //    @Config.Comment("") TODO
     public static final PyrotechConfig PYROTECH = new PyrotechConfig();
 
@@ -18,6 +18,24 @@ public class QSModIntegrationConfig {
 
         @Config.Comment("Disable JEI Worktable category")
         public boolean workbenchCategoryTweak = true;
+
+        @Config.Comment("")
+        public boolean mergeDryingCategory = true;
+    }
+
+    @Config.Name("industrial_upgrade")
+    public static final IUCategory INDUSTRIAL_UPGRADE = new IUCategory();
+
+    public static class IUCategory {
+        @Config.Comment("Enable IU Tweaks")
+        public boolean enabled = true;
+
+        @Config.Comment("Disable JEI Recycler category")
+        public boolean recyclerCategoryTweak = true;
+    }
+
+    static {
+        ConfigAnytime.register(QSModIntegrationConfig.class);
     }
 
 }

@@ -72,13 +72,19 @@ dependencies {
     compileOnlyApi "org.jetbrains:annotations:26.0.2"
     annotationProcessor "org.jetbrains:annotations:26.0.2"
 
-    compileOnly rfg.deobf("curse.maven:jei-238222:5846804")
-    runtimeOnly "mezz:jei:4.30.2"
+    implementation "com.cleanroommc:configanytime:3.0"
+
+    implementation "mezz:jei:4.30.3"
     
     // Pyrotech
     implementation rfg.deobf("curse.maven:pyrotech-306676:6253355")
     implementation rfg.deobf("curse.maven:athenaeum-284350:4633750")
     implementation rfg.deobf("curse.maven:dropt-284973:5405050")
 
+    // Industrial Upgrade
+    implementation rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
+    implementation rfg.deobf("curse.maven:quantum-generators-572971:7023043")
+    implementation rfg.deobf("curse.maven:simply-quarries-572662:7023042")
+    implementation rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
 
 }

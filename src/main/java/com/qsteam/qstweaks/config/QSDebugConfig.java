@@ -1,5 +1,6 @@
 package com.qsteam.qstweaks.config;
 
+import com.cleanroommc.configanytime.ConfigAnytime;
 import com.qsteam.qstweaks.Tags;
 import net.minecraftforge.common.config.Config;
 
@@ -17,6 +18,10 @@ public class QSDebugConfig {
         @Config.Comment("Logging missing languages")
         public boolean missingLangsLogger = false;
         public String[] languages = {"en_us"};
+    }
+
+    static {
+        ConfigAnytime.register(QSDebugConfig.class);
     }
 
 }
