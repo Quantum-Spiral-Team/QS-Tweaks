@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Arrays;
 
 @Mixin(value = PluginJEI.class, remap = false)
-public class MixinPluginJEI {
+public abstract class MixinPluginJEI {
 
     @Redirect(
             method = "registerCategories",

@@ -19,7 +19,7 @@ public class QSModIntegrationConfig {
         @Config.Comment("Disable JEI Worktable category")
         public boolean workbenchCategoryTweak = true;
 
-        @Config.Comment("")
+//        @Config.Comment("") //TODO
         public boolean mergeDryingCategory = true;
     }
 
@@ -32,6 +32,9 @@ public class QSModIntegrationConfig {
 
         @Config.Comment("Disable JEI Recycler category")
         public boolean recyclerCategoryTweak = true;
+
+        @Config.Comment("Если да, категория полностью удаляется, если нет, то меняется на оптимальную версию")
+        public boolean removeRecyclerCategory = false;
     }
 
     static {
