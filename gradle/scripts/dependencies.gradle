@@ -28,6 +28,10 @@ repositories {
     maven {
         url "https://repo.cleanroommc.com/releases"
     }
+    maven {
+        name = "Zeitheron Maven"
+        url = "https://maven.zeith.org"
+    }
     mavenLocal() // Must be last for caching to work
 }
 
@@ -75,16 +79,32 @@ dependencies {
     implementation "com.cleanroommc:configanytime:3.0"
 
     implementation "mezz:jei:4.30.3"
-    
+
+
     // Pyrotech
-    implementation rfg.deobf("curse.maven:pyrotech-306676:6253355")
-    implementation rfg.deobf("curse.maven:athenaeum-284350:4633750")
-    implementation rfg.deobf("curse.maven:dropt-284973:5405050")
+    compileOnly rfg.deobf("curse.maven:pyrotech-306676:6253355")
+    compileOnly rfg.deobf("curse.maven:athenaeum-284350:4633750")
+    compileOnly rfg.deobf("curse.maven:dropt-284973:5405050")
+
+//    runtimeOnly rfg.deobf("curse.maven:pyrotech-306676:6253355")
+//    runtimeOnly rfg.deobf("curse.maven:athenaeum-284350:4633750")
+//    runtimeOnly rfg.deobf("curse.maven:dropt-284973:5405050")
+
 
     // Industrial Upgrade
-    implementation rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
-    implementation rfg.deobf("curse.maven:quantum-generators-572971:7023043")
-    implementation rfg.deobf("curse.maven:simply-quarries-572662:7023042")
-    implementation rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
+    compileOnly rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
+    compileOnly rfg.deobf("curse.maven:quantum-generators-572971:7023043")
+    compileOnly rfg.deobf("curse.maven:simply-quarries-572662:7023042")
+    compileOnly rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
+
+//    runtimeOnly rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
+//    runtimeOnly rfg.deobf("curse.maven:quantum-generators-572971:7023043")
+//    runtimeOnly rfg.deobf("curse.maven:simply-quarries-572662:7023042")
+//    runtimeOnly rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
+
+
+    // HammerLib
+    compileOnly rfg.deobf("org.zeith.HammerLib:HammerLib-1.12.2:12.2.58")
+//    runtimeOnly rfg.deobf("org.zeith.HammerLib:HammerLib-1.12.2:12.2.58")
 
 }

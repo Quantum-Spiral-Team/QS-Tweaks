@@ -1,6 +1,5 @@
 package com.qsteam.qstweaks.core;
 
-import com.codetaylor.mc.pyrotech.Reference;
 import com.google.common.collect.ImmutableMap;
 import com.qsteam.qstweaks.config.QSModIntegrationConfig;
 import net.minecraftforge.fml.common.Loader;
@@ -15,8 +14,9 @@ import java.util.function.BooleanSupplier;
 public class QSMixinLoader implements ILateMixinLoader {
 
     private static final Map<String, BooleanSupplier> MIXIN_CONFIGS = ImmutableMap.of(
-        "mixins/mod/mixins.qstweaks.pyrotech.json", () -> Loader.isModLoaded(Reference.MOD_ID) && QSModIntegrationConfig.PYROTECH.enabled,
-        "mixins/mod/mixins.qstweaks.iu.json", () -> Loader.isModLoaded("industrialupgrade") && QSModIntegrationConfig.INDUSTRIAL_UPGRADE.enabled
+            "mixins/mod/mixins.qstweaks.pyrotech.json", () -> Loader.isModLoaded("pyrotech") && QSModIntegrationConfig.PYROTECH.enabled,
+            "mixins/mod/mixins.qstweaks.iu.json", () -> Loader.isModLoaded("industrialupgrade") && QSModIntegrationConfig.INDUSTRIAL_UPGRADE.enabled,
+            "mixins/mod/mixins.qstweaks.hammerlib.json", () -> Loader.isModLoaded("hammercore") && QSModIntegrationConfig.HAMMER_LIB.enabled
     );
 
     @Override

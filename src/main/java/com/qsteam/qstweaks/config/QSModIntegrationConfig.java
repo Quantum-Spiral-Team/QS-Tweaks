@@ -37,6 +37,17 @@ public class QSModIntegrationConfig {
         public boolean removeRecyclerCategory = false;
     }
 
+    @Config.Name("hammerlib")
+    public static final HammerLibCategory HAMMER_LIB = new HammerLibCategory();
+
+    public static class HammerLibCategory {
+        @Config.Comment("Enable HammerLib Tweaks")
+        public boolean enabled = true;
+
+        @Config.Comment("Fix problems with requests to `https://api.stopmodreposts.org/minecraft/sites.json`")
+        public boolean fixCheckIllegalSites = true;
+    }
+
     static {
         ConfigAnytime.register(QSModIntegrationConfig.class);
     }

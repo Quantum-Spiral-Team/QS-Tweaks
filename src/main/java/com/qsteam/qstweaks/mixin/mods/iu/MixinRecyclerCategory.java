@@ -5,7 +5,6 @@ import com.denfop.api.recipe.InventoryOutput;
 import com.denfop.container.ContainerMultiMachine;
 import com.denfop.container.SlotInvSlot;
 import com.denfop.integration.jei.recycler.RecyclerCategory;
-import com.denfop.integration.jei.recycler.RecyclerWrapper;
 import com.qsteam.qstweaks.config.QSModIntegrationConfig;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
