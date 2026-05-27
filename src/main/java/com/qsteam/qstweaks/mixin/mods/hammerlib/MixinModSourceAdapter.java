@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 // Mixin taken from modpack IsolatedCrystal3
@@ -27,7 +27,7 @@ public abstract class MixinModSourceAdapter {
     )
     private static void onInit(CallbackInfo ci) {
         if (QSModIntegrationConfig.HAMMER_LIB.fixCheckIllegalSites) {
-            ILLEGAL_SITES = new ArrayList<>();
+            ILLEGAL_SITES = Collections.emptyList();
             ci.cancel();
         }
     }
