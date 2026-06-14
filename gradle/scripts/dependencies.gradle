@@ -6,8 +6,8 @@ repositories {
     exclusiveContent {
         forRepository {
             maven {
-                name 'CurseMaven'
-                url 'https://cursemaven.com'
+                name 'CleanroomMC CurseMaven'
+                url 'https://curse.cleanroommc.com'
             }
         }
         filter {
@@ -93,9 +93,9 @@ dependencies {
 
     // Industrial Upgrade
     compileOnly rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
-    compileOnly rfg.deobf("curse.maven:quantum-generators-572971:7023043")
-    compileOnly rfg.deobf("curse.maven:simply-quarries-572662:7023042")
-    compileOnly rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
+//    compileOnly rfg.deobf("curse.maven:quantum-generators-572971:7023043")
+//    compileOnly rfg.deobf("curse.maven:simply-quarries-572662:7023042")
+//    compileOnly rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
 
 //    runtimeOnly rfg.deobf("curse.maven:industrial-upgrade-372007:7023083")
 //    runtimeOnly rfg.deobf("curse.maven:quantum-generators-572971:7023043")
