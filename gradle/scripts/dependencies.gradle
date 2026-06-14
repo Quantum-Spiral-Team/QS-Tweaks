@@ -84,7 +84,7 @@ dependencies {
     // Pyrotech
     compileOnly rfg.deobf("curse.maven:pyrotech-306676:6253355")
     compileOnly rfg.deobf("curse.maven:athenaeum-284350:4633750")
-    compileOnly rfg.deobf("curse.maven:dropt-284973:5405050")
+//    compileOnly rfg.deobf("curse.maven:dropt-284973:5405050")
 
 //    runtimeOnly rfg.deobf("curse.maven:pyrotech-306676:6253355")
 //    runtimeOnly rfg.deobf("curse.maven:athenaeum-284350:4633750")
