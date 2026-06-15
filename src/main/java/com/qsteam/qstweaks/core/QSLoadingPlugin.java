@@ -2,14 +2,22 @@ package com.qsteam.qstweaks.core;
 
 import com.google.common.collect.ImmutableMap;
 import com.qsteam.qstweaks.config.QSDebugConfig;
+import com.qsteam.qstweaks.config.QSModIntegrationConfig;
+import com.qsteam.qstweaks.core.transformer.modintegration.MoarTConPluginTransformer;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 import java.util.*;
 import java.util.function.BooleanSupplier;
 
+@IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE + 10)
 public class QSLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
+    public static final Logger LOGGER = LogManager.getLogger(QSLoadingPlugin.class.getSimpleName());
 
     public static final boolean IS_CLIENT = FMLLaunchHandler.side().isClient();
 
@@ -21,9 +29,20 @@ public class QSLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
             "mixins/debug/mixins.qstweaks.langs.json", () -> QSDebugConfig.GENERAL.missingLangsLogger
     );
 
+    private static boolean isMoarTConCoreModPresent() {
+        try {
+            Class.forName("com.existingeevee.moretcon.mixinext.MoarTConCorePlugin", false, Launch.classLoader);
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public String[] getASMTransformerClass() {
-        return new String[0];
+        List<String> transformerClassList = new ArrayList<>();
+        if (isMoarTConCoreModPresent() && QSModIntegrationConfig.MOAR_TCON.enabled) transformerClassList.add(MoarTConPluginTransformer.class.getName());
+        return transformerClassList.toArray(new String[0]);
     }
 
     @Override

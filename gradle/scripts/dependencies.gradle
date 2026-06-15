@@ -29,8 +29,8 @@ repositories {
         url "https://repo.cleanroommc.com/releases"
     }
     maven {
-        name = "Zeitheron Maven"
-        url = "https://maven.zeith.org"
+        name = "DVS1 Maven FS"
+        url = "https://dvs1.progwml6.com/files/maven"
     }
     mavenLocal() // Must be last for caching to work
 }
@@ -102,9 +102,15 @@ dependencies {
 //    runtimeOnly rfg.deobf("curse.maven:simply-quarries-572662:7023042")
 //    runtimeOnly rfg.deobf("curse.maven:power-utilities-iu-572640:7023044")
 
+    // Tinkers' Construct (Antique)
+    compileOnly rfg.deobf("curse.maven:tinkers-antique-1242239:8089154")
 
-    // HammerLib
-    compileOnly rfg.deobf("org.zeith.HammerLib:HammerLib-1.12.2:12.2.58")
-//    runtimeOnly rfg.deobf("org.zeith.HammerLib:HammerLib-1.12.2:12.2.58")
+//    runtimeOnly rfg.deobf("curse.maven:tinkers-antique-1242239:8089154")
+//    runtimeOnly rfg.deobf("slimeknights.mantle:Mantle:1.12-1.3.3.55")
+
+    // MoarTCon
+    compileOnly rfg.deobf("curse.maven:more-tcon-396545:7254880")
+
+//    runtimeOnly rfg.deobf("curse.maven:more-tcon-396545:7254880")
 
 }

@@ -37,6 +37,17 @@ public class QSModIntegrationConfig {
         public boolean removeRecyclerCategory = false;
     }
 
+    @Config.Name("moar_tcon")
+    public static final MoarTConCategory MOAR_TCON = new MoarTConCategory();
+
+    public static class MoarTConCategory {
+        @Config.Comment("Enable MoarTCon Tweaks")
+        public boolean enabled = true;
+
+        @Config.Comment("Enable migrate mod to MixinBooter")
+        public boolean migrate2MixinBooter = true;
+    }
+
     static {
         ConfigAnytime.register(QSModIntegrationConfig.class);
     }
