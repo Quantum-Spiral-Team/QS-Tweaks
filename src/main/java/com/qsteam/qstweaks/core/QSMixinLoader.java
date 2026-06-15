@@ -28,5 +28,4 @@ public class QSMixinLoader implements ILateMixinLoader {
         return MIXIN_CONFIGS.get(config).getAsBoolean();
     }
 
-
 }

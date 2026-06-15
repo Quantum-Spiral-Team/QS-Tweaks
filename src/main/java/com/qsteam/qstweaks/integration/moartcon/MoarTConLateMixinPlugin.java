@@ -30,4 +30,17 @@ public class MoarTConLateMixinPlugin implements ILateMixinLoader {
         return Collections.emptyList();
     }
 
+    @Override
+    public boolean shouldMixinConfigQueue(String mixinConfig) {
+        if (mixinConfig.isEmpty()) return false;
+        String prefix = "com.existingeevee.moretcon.mixin.softdep.";
+        if (mixinConfig.startsWith(prefix)) {
+            String cleanName = mixinConfig.substring(prefix.length()).split("\\.")[0];
+            for (String modId : cleanName.split("\\$")) {
+                if (!Loader.isModLoaded(modId)) return false;
+            }
+        }
+        return true;
+    }
+
 }
