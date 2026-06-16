@@ -14,10 +14,6 @@ public class QSDebugConfig {
     public static class DebugCategory {
         @Config.Comment("Logging dimension IDs conflicts")
         public boolean dimConflictDetector = false;
-
-        @Config.Comment("Logging missing languages")
-        public boolean missingLangsLogger = false;
-        public String[] languages = {"en_us"};
     }
 
     static {

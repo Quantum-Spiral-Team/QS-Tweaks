@@ -25,8 +25,7 @@ public class QSLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
     private static final Map<String, BooleanSupplier> CLIENT_MIXIN_CONFIGS = Collections.emptyMap();
 
     private static final Map<String, BooleanSupplier> COMMON_MIXIN_CONFIGS = ImmutableMap.of(
-            "mixins/debug/mixins.qstweaks.dimensions.json", () -> QSDebugConfig.GENERAL.dimConflictDetector,
-            "mixins/debug/mixins.qstweaks.langs.json", () -> QSDebugConfig.GENERAL.missingLangsLogger
+            "mixins/debug/mixins.qstweaks.dimensions.json", () -> QSDebugConfig.GENERAL.dimConflictDetector
     );
 
     private static boolean isMoarTConCoreModPresent() {
