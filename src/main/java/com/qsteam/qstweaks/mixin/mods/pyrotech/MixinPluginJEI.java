@@ -9,6 +9,7 @@ import com.qsteam.qstweaks.config.QSModIntegrationConfig;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import mezz.jei.api.recipe.VanillaRecipeCategoryUid;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,8 +31,8 @@ public abstract class MixinPluginJEI {
                     target = "Lmezz/jei/api/recipe/IRecipeCategoryRegistration;addRecipeCategories([Lmezz/jei/api/recipe/IRecipeCategory;)V"
             )
     )
-    private void redirectRegisterCategories(IRecipeCategoryRegistration registry, IRecipeCategory[] categories) {
-        IRecipeCategory[] filtered = Arrays.stream(categories)
+    private void redirectRegisterCategories(IRecipeCategoryRegistration registry, IRecipeCategory<? extends IRecipeWrapper>[] categories) {
+        IRecipeCategory<?>[] filtered = Arrays.stream(categories)
                 .filter(this::qstweaks$shouldKeepCategory)
                 .toArray(IRecipeCategory[]::new);
 
@@ -39,7 +40,7 @@ public abstract class MixinPluginJEI {
     }
 
     @Unique
-    private boolean qstweaks$shouldKeepCategory(IRecipeCategory category) {
+    private boolean qstweaks$shouldKeepCategory(IRecipeCategory<? extends IRecipeWrapper> category) {
         return !(
                 (QSModIntegrationConfig.PYROTECH.workbenchCategoryTweak && category instanceof JEIRecipeCategoryWorktable)
                 || (QSModIntegrationConfig.PYROTECH.mergeDryingCategory && category instanceof JEIRecipeCategoryDryingRack)
