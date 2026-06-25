@@ -48,6 +48,17 @@ public class QSModIntegrationConfig {
         public boolean migrate2MixinBooter = true;
     }
 
+    @Config.Name("ntm-ce")
+    public static final NTMCategory NTM_CE = new NTMCategory();
+
+    public static class NTMCategory {
+        @Config.Comment("Enable NTM:CE Tweaks")
+        public boolean enabled = true;
+
+        @Config.Comment("Fix NullPointer in ItemMold$MoldShape (https://github.com/Warfactory-Official/Hbm-s-Nuclear-Tech-CE/pull/1556)")
+        public boolean moldShapeTweak = true;
+    }
+
     static {
         ConfigAnytime.register(QSModIntegrationConfig.class);
     }

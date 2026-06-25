@@ -26,11 +26,16 @@ repositories {
         }
     }
     maven {
+        name "Cleanroom"
         url "https://repo.cleanroommc.com/releases"
     }
     maven {
-        name = "DVS1 Maven FS"
-        url = "https://dvs1.progwml6.com/files/maven"
+        name "DVS1 Maven FS"
+        url "https://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        name "Warfactory Releases"
+        url "https://repo.warfactory.co/releases"
     }
     mavenLocal() // Must be last for caching to work
 }
@@ -78,7 +83,7 @@ dependencies {
 
     implementation "com.cleanroommc:configanytime:3.0"
 
-    implementation "mezz:jei:4.30.3"
+    implementation "mezz:jei:4.31.2"
 
 
     // Pyrotech
@@ -113,4 +118,10 @@ dependencies {
 
 //    runtimeOnly rfg.deobf("curse.maven:more-tcon-396545:7254880")
 
+    // HBM's Nuclear Tech Mod: Community Edition
+//    implementation "com.hbm:ntm-ce:2.5.0.4:dev"
+    compileOnly rfg.deobf("curse.maven:hbm-nuclear-tech-mod-community-edition-1312314:8314987")
+
+//    runtimeOnly "com.hbm:ntm-ce:2.5.0.4:dev"
+    runtimeOnly rfg.deobf("curse.maven:hbm-nuclear-tech-mod-community-edition-1312314:8314987")
 }
